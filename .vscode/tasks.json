@@ -1,0 +1,25 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "dist:win",
+            "type": "shell",
+            "command": "./build.win.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "dist:linux",
+            "type": "shell",
+            "command": "./build.linux.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "dist:mac",
+            "type": "shell",
+            "command": "./build.mac.sh",
+            "problemMatcher": []
+        }
+    ]
+}
