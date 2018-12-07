@@ -45,6 +45,7 @@
     "@babel/preset-react": "^7.0.0",
     "@types/electron-devtools-installer": "^2.2.0",
     "@types/electron-json-storage": "^4.0.0",
+    "@types/es6-promise": "^3.3.0",
     "@types/history": "^4.7.2",
     "@types/jest": "^23.3.10",
     "@types/pify": "^3.0.2",
@@ -53,14 +54,17 @@
     "@types/react-redux": "^6.0.10",
     "@types/react-router": "^4.4.1",
     "@types/react-router-dom": "^4.3.1",
+    "@types/webdriverio": "^4.13.0",
     "electron": "3.0.10",
     "electron-builder": "^20.36.2",
     "electron-webpack": "^2.6.1",
     "electron-webpack-ts": "^3.1.0",
     "jest": "^23.6.0",
+    "spectron": "^5.0.0",
     "ts-jest": "^23.10.5",
     "tslint": "^5.11.0",
     "typescript": "^3.2.1",
+    "webdriverio": "^4.14.1",
     "webpack": "^4.26.0"
   }
 }

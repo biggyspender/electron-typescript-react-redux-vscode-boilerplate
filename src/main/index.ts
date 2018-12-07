@@ -18,7 +18,8 @@ declare module 'electron' {
 const devToolsExtensions = [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS, REACT_PERF];
 
 
-const isDevelopment = process.env.NODE_ENV !== 'production'
+const isDevelopment = process.env.NODE_ENV === 'development'
+const isSpectron = process.env.IS_SPECTRON === 'true'
 
 isDevelopment && app.commandLine.appendSwitch('remote-debugging-port', '9223')
 
@@ -32,16 +33,26 @@ function createMainWindow() {
   //   window.webContents.openDevTools()
   // }
 
-  if (isDevelopment) {
-    window.loadURL(`http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`)
-  }
-  else {
-    window.loadURL(formatUrl({
-      pathname: path.join(__dirname, 'index.html'),
-      protocol: 'file',
-      slashes: true
-    }))
-  }
+
+  const templateUrl =
+    isSpectron
+      ? formatUrl({
+        pathname: path.join(__dirname, '..', 'renderer', 'index.html'),
+        protocol: 'file',
+        slashes: true
+      })
+      : isDevelopment
+        ? `http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`
+        : formatUrl({
+          pathname: path.join(__dirname, 'index.html'),
+          protocol: 'file',
+          slashes: true
+        })
+
+  console.log(`loading templateUrl : ${templateUrl}`)
+  window.loadURL(templateUrl)
+
+
 
   window.on('closed', () => {
     mainWindow = null

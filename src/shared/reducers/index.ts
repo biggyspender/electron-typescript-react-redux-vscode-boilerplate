@@ -1,5 +1,5 @@
 import counter from './counter'
-import { combineReducers, Reducer } from 'redux';
+import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router'
 import { History } from 'history';
 import { getType } from 'typesafe-actions';
