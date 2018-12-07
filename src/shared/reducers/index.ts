@@ -5,8 +5,8 @@ import { History } from 'history';
 import { getType } from 'typesafe-actions';
 import StoreActions from '../actions/store';
 import RootActions from '../actions';
+import getInitialReducerState from '../system/getInitialReducerState';
 
-const getInitialState = <S>(reducer: Reducer<S>) => reducer(undefined, { type: null })
 
 export type RootState = ReturnType<ReturnType<typeof getRootReducer>>
 export const getRootReducer = (history: History) => {
@@ -14,7 +14,7 @@ export const getRootReducer = (history: History) => {
     return (state: ReturnType<typeof r>, action: RootActions):ReturnType<typeof r> => {
         switch (action.type) {
             case getType(StoreActions.reset):
-                return getInitialState(r);
+                return getInitialReducerState(r);
             default:
                 return r(state, action);
         }
