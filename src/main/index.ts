@@ -21,8 +21,9 @@ const devToolsExtensions = [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS, REACT_PERF];
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSpectron = process.env.IS_SPECTRON === 'true'
 
-isDevelopment && app.commandLine.appendSwitch('remote-debugging-port', '9223')
-
+isDevelopment && (!isSpectron) && app.commandLine.appendSwitch('remote-debugging-port', '9223')
+isSpectron && app.commandLine.appendSwitch('headless')
+isSpectron && app.commandLine.appendSwitch('disable-gpu')
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
 let mainWindow: BrowserWindow | null
 
