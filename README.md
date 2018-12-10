@@ -1,3 +1,19 @@
+# electron-typescript-react-redux-vscode-boilerplate
+> A quick-start template based-off [`electron-webpack-quick-start`](https://github.com/electron-userland/electron-webpack-quick-start)
+
+With:
+
+* typescript
+* hot-reloading
+* redux/react/react-perf devtools
+* debugging and breakpoints from within VSCode for both the main and renderer processes
+* redux [`epics`](https://github.com/redux-observable/redux-observable) and [`sagas`](https://github.com/redux-saga/redux-saga)
+* store persistence
+* [`routing`](https://github.com/supasate/connected-react-router)
+* unit-testing with [`Jest`](https://github.com/facebook/jest)
+* e2e testing with [`Spectron`](https://github.com/electron/spectron)/[`WebDriverIO`](https://github.com/webdriverio/webdriverio)
+
+
 # electron-webpack-quick-start
 > A bare minimum project structure to get started developing with [`electron-webpack`](https://github.com/electron-userland/electron-webpack).
 
