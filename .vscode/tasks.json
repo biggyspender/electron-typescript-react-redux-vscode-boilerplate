@@ -20,6 +20,18 @@
             "type": "shell",
             "command": "./build.mac.sh",
             "problemMatcher": []
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "yarn test",
+            "problemMatcher": []
+        },
+        {
+            "label": "test:e2e",
+            "type": "shell",
+            "command": "yarn test:e2e",
+            "problemMatcher": []
         }
     ]
 }

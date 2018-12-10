@@ -35,7 +35,7 @@ describe("first test", function () {
         const newOddNotYetIncrementedValStr = await app.client.getText('#counter-count')
         expect(parseInt(newOddNotYetIncrementedValStr)).toBe(newOddVal)
         const delay = (t: number) => new Promise(r => setTimeout(r, t))
-        await delay(3000)
+        await delay(1500)
         const newOddIncrementedValStr = await app.client.getText('#counter-count')
         expect(parseInt(newOddIncrementedValStr)).toBe(newOddVal + 2)
     })
