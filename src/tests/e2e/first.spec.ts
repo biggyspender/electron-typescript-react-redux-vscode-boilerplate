@@ -24,6 +24,20 @@ describe("first test", function () {
         const newValStr = await app.client.getText('#counter-count')
         const newVal = parseInt(newValStr)
         expect(newVal).toBe(val + 1)
+        let newOddVal = newVal;
+        if (newOddVal % 2 == 0) {
+            await app.client.click('#increment-button')
+            const newOddValStr = await app.client.getText('#counter-count')
+            newOddVal = parseInt(newOddValStr)
+            expect(newOddVal % 2).toBe(1)
+        }
+        await app.client.click('#increment-if-odd-button')
+        const newOddNotYetIncrementedValStr = await app.client.getText('#counter-count')
+        expect(parseInt(newOddNotYetIncrementedValStr)).toBe(newOddVal)
+        const delay = (t: number) => new Promise(r => setTimeout(r, t))
+        await delay(3000)
+        const newOddIncrementedValStr = await app.client.getText('#counter-count')
+        expect(parseInt(newOddIncrementedValStr)).toBe(newOddVal + 2)
     })
 
 })

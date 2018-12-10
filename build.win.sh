@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 CURRENT_ID=`whoami`:`id -g -n`
 sudo ./clean.sh 
-docker build -t electronbuilder:wine .
 docker run \
 	--rm \
 	-ti \
@@ -12,6 +11,6 @@ docker run \
 	-v ${PWD##*/}-node-modules:/project/node_modules \
 	-v ~/.cache/electron:/root/.cache/electron \
 	-v ~/.cache/electron-builder:/root/.cache/electron-builder \
-	electronbuilder:wine \
-	bash -c './run-build.sh'
+	electronuserland/builder:wine \
+	bash -c 'yarn && yarn dist --win'
 sudo chown -R $CURRENT_ID dist

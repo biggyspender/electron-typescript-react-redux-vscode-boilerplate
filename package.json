@@ -14,8 +14,8 @@
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "test": "yarn compile && jest",
-    "test:e2e": "yarn compile && jest --config jest.config.e2e.js",
-    "dist": "yarn test:e2e && electron-builder",
+    "test:e2e": "yarn test --config jest.config.e2e.js",
+    "dist": "yarn compile && electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
   "dependencies": {
