@@ -22,8 +22,8 @@ const incrementIfOddEpic = (
             await delay(1000);
             return x;
         }),
-        flatMap(() => [CounterActions.increment(),CounterActions.increment()]),
-        tap(x=>console.log("epic : ",x))
+        flatMap(() => [CounterActions.increment(), CounterActions.increment()]),
+        tap(x => console.log("epic : ", x))
     )
 
 export const getRootEpic = () => combineEpics(incrementIfOddEpic)
