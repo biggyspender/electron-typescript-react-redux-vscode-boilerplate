@@ -6,7 +6,7 @@ With:
 * typescript
 * hot-reloading
 * redux/react/react-perf devtools
-* debugging and breakpoints from within VSCode for both the main and renderer processes
+* F5 debugging and breakpoints from within VSCode for both the main and renderer processes
 * redux [`epics`](https://github.com/redux-observable/redux-observable) and [`sagas`](https://github.com/redux-saga/redux-saga)
 * store persistence
 * [`routing`](https://github.com/supasate/connected-react-router)
