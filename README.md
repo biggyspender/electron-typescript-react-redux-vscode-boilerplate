@@ -13,6 +13,7 @@ With:
 * unit-testing with [`Jest`](https://github.com/facebook/jest)
 * e2e testing with [`Spectron`](https://github.com/electron/spectron)/[`WebDriverIO`](https://github.com/webdriverio/webdriverio)
 
+As mentioned below, use **yarn**, not **npm**
 
 # electron-webpack-quick-start
 > A bare minimum project structure to get started developing with [`electron-webpack`](https://github.com/electron-userland/electron-webpack).
